@@ -19,10 +19,17 @@ export const Login = () => {
         const userfromStorage = userList.find((user) => {
             return user.username === userInfo.username
         })
+        // let path;
+        // if(location.state.previousPath){
+        //     path = location.state.previousPath
+        // } else{
+        //     path = '/'
+        // }
         if(userfromStorage){
             if(userfromStorage.password === userInfo.password){
                 loggedInuser.setUser(userInfo)
                 navigate(location.state?.previousPath || '/')
+                // navigate(path)
             } else{
                 setpasswordNotMatch(true)
             }
@@ -42,7 +49,7 @@ export const Login = () => {
             <br/>
             <br/>
             <label htmlFor="password">Password</label>
-            <input id='password' type="password" onChange={(e) => setUserName({...userInfo, password: e.target.value})}/>
+            <input id='password' type="text" onChange={(e) => setUserName({...userInfo, password: e.target.value})}/>
             <br/><br/>
             <button>login</button>
         </form>

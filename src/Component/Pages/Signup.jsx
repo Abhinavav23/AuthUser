@@ -14,7 +14,7 @@ export const Signup = () => {
         e.preventDefault()
         const userList = JSON.parse(localStorage.getItem('users'));
         userList.push(userInfo)
-        localStorage.setItem('users', JSON.stringify(userList))
+        localStorage.setItem('users', JSON.stringify(userList));
         loggedInuser.setUser(userInfo)
         navigate('/')
     }
