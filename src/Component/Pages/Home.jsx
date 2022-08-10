@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 export const Home = () => {
   const[posts, setPosts] = useState([])
   const [searchParams, setsearchParams] = useSearchParams()
+  console.log(searchParams.get('user'));
   const navigate = useNavigate()
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
